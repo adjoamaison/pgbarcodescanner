@@ -13,9 +13,7 @@
 		function test(){
 			cordova.plugins.barcodeScanner.scan(
 	      		function (result) {
-	      			
-	      			result= result.text ;
-	               
+	                $("#scan").val(result.text);
 	      		}, 
 	      		function (error) {
 	          		alert("Scanning failed: " + error);
