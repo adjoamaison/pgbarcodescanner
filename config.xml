@@ -13,6 +13,6 @@
 			Adjoa Maison
 		</author>
 		<gap:plugin name="com.phonegap.plugins.barcodescanner" version="2.2.0" />
-		<!-- <icon src="water.png"/>
-		<gap:splash src ="splash.png"/> -->
+		<icon src="barcodes-icon.png"/>
+		<!-- <gap:splash src ="splash.png"/> -->
 	</widget>
