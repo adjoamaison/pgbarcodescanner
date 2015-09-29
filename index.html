@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="themes/mytheme.css" />
+  		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="jquery-2.1.4.min.js"></script>
+		<script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+
+		function test(){
+			cordova.plugins.barcodeScanner.scan(
+	      		function (result) {
+	      			var result="";
+	      			result="We got a barcode\n" +
+	                "Result: " + result.text + "\n" +
+	                "Format: " + result.format + "\n" +
+	                "Cancelled: " + result.cancelled;
+	                $("#scan").html(result);
+	      		}, 
+	      		function (error) {
+	          		alert("Scanning failed: " + error);
+	      		}
+   			);
+		}
+
+		</script>
+	</head>
+	<body>
+		<div data-role="page" id="pageone">
+			<div data-role="header">
+				<a href="#pageone" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-home">Home</a>
+				<h1>Barcode Scanner</h1>
+				
+			</div>
+
+			<div role="main" class="ui-content">
+
+				<form method="post">
+					<div data-role="fieldcontain" >
+						<label for="scan" id="scanlabel">Value</label>
+						<input type="text" name="scan" id="scan">						
+						
+					</div>
+					<a href="#" data-role="button"data-inline="true" data-icon="grid" onclick="test()">SCAN</a>
+			</form>
+			</div>
+			<div data-role="footer">
+				<h2>Reader</h2>
+			</div>
+		</div>
+	</body>
+</html>
